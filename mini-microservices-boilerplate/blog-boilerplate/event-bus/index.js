@@ -17,18 +17,18 @@ app.post("/events", async (req, res) => {
     console.log(err.message);
     console.log("post 4000");
   });
-  // axios.post("http://localhost:4001/events", events).catch((err) => {
-  //   console.log(err.message);
-  //   console.log("comment 4001");
-  // });
-  // axios.post("http://localhost:4002/events", events).catch((err) => {
-  //   console.log(err.message);
-  //   console.log("query 4002");
-  // });
-  // axios.post("http://localhost:4003/events", events).catch((err) => {
-  //   console.log(err.message);
-  //   console.log("moderation 4003");
-  // });
+  axios.post("http://comments-srv:4001/events", events).catch((err) => {
+    console.log(err.message);
+    console.log("comment 4001");
+  });
+  axios.post("http://query-srv:4002/events", events).catch((err) => {
+    console.log(err.message);
+    console.log("query 4002");
+  });
+  axios.post("http://moderation-srv:4003/events", events).catch((err) => {
+    console.log(err.message);
+    console.log("moderation 4003");
+  });
 
   res.send({ status: "OK" });
 });
